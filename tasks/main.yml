@@ -1,2 +1,9 @@
 ---
-# tasks file for ansible-role-confluence-supplemental
+
+- name: set transaction-isolation=READ-COMMITTED
+  lineinfile:
+    path: "{{ mysql_config_file }}"
+    regexp: '^transaction-isolation='
+    insertafter: '^\[mysqld\]'
+    line: 'transaction-isolation=READ-COMMITTED'
+  notify: restart mysql

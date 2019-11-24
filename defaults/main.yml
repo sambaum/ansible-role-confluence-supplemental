@@ -1,2 +1,3 @@
 ---
 # defaults file for ansible-role-confluence-supplemental
+mysql_config_file: /etc/mysql/my.cnf
